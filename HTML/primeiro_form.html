@@ -1,100 +1,152 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
+    
+    <head>
+        <meta charset="utf-8"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="css/style.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Formulário</title>
+    </head>
+    
+    <body>
+         <nav class="top-nav">
+            <div class="nav-wrapper">
+                <a id="titulo-pag" href="#" class="brand-logo">Ficha de cadastro</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="http://cariocadev.com.br/">CariocaDev</a></li>
+                    <li><a href="http://projetomatrix.cariocadev.com.br/">Projeto Matrix</a></li>
+                    <li><a href="http://cariocadev.com.br/index.php/category/projeto-matrix/">CariocaDev Matrix</a></li>
+                </ul>
+            </div>
+        </nav>
 
-<head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulário</title>
-</head>
 
-<body>
+        <div class="container">
+            <form name="formulario" id="formulario" method="post">
 
-    <h1>Ficha de Inscrição</h1> <br>
-    <form action="#" method="post" />
-    <div>
-        <label for="email">Endereço de e-mail:  </label>
-        <input id="email" type="email" name="email" required/>
-    </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">email</i>
+                        <input id="email" type="email" class="validate" autofocus required>
+                        <label for="email">E-mail:</label>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">assignment_ind</i>
+                        <input id="nome" type="text" class="validate" required>
+                        <label for="nome">Nome:</label>
+                    </div>
+                </div>
+                
+                <div class="form-select">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">supervisor_account</i>
+                            <select required> 
+                                <option value="" disabled selected></option>
+                                <option value="masculino">Masculino</option>
+                                <option value="feminino">Feminino</option>
+                            </select>
+                            <label>Sexo:</label>
+                        </div>
+                    </div>
 
-    <div>
-        <label for="nomeficha">Nome:  </label>
-        <input id="nomeficha" type="text" name="nomeficha" required>
-    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">view_list</i>
+                            <select required>
+                                <option value="" disabled selected></option>
+                                <option value="informatica">Curso técnico em informática</option>
+                                <option value="alimentos">Curso técnico em alimentos</option>
+                                <option value="agropecuaria">Curso técnico em agropecuária</option>
+                            </select>
+                            <label>Curso:</label>
+                        </div>
+                    </div>
+                </div>
 
-    <div>
-        <label>Sexo:  </label>
-        <select class="browser-default" required>
-    <option value="" disabled selected></option>
-    <option value="m">Masculino</option>
-    <option value="f">Feminino</option>
-  </select>
-    </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">location_on</i>
+                        <input id="endereco" type="text" class="validate" required>
+                        <label for="endereco">Endereço para correspondência:</label>
+                    </div>
+                </div>
 
-    <div>
-        <label>Curso:  </label>
-        <select class="browser-default" required>
-            <option value="" disabled selected></option>
-            <option value="informatica">Curso Técnico em Informática</option>
-            <option value="alimentos">Curso Técnico em Alimentos</option>
-            <option value="agropecuaria">Curso Técnico em Agropecuária.</option>
-        </select>
-    </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">my_location</i>
+                        <input id="complemento" type="text" class="validate">
+                        <label for="complemento">Complemento do endereço:</label>
+                    </div>
+                </div>
 
-    <div>
-        <label for="endereco">Endereço para correspondência:  </label>
-        <input id="endereco" type="text" name="endereco" required/>
-    </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">navigation</i>
+                        <input id="cep" type="text" class="validate" required>
+                        <label for="cep">Cep:</label>
+                    </div>
+                </div>
 
-    <div>
-        <label for="complemento">Complemento do Endereço:  </label>
-        <input id="complemento" type="text" name="complemento" />
-    </div>
+                <div class="row">
+                    <div class="input-field col s11">
+                        <i class="material-icons prefix">open_with</i>
+                        <input id="municipio" type="text" class="validate" required>
+                        <label for="municipio">Município:</label>
+                    </div>
 
-    <div>
-        <label for="cep">CEP:  </label>
-        <input id="cep" type="text" name="cep" required/>
-    </div>
+                    <div class="input-field col s1">
+                    <select name="uf" id="uf" required>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AM">AM</option>
+                            <option value="AP">AP</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MG">MG</option>
+                            <option value="MS">MS</option>
+                            <option value="MT">MT</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="PR">PR</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS" selected>RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SE">SE</option>
+                            <option value="SP">SP</option>
+                            <option value="TO">TO</option>
+                    </select>
+                    </div>
+                </div>
 
-    <div>
-        <label for="municipio">Município:  </label>
-        <input id="municipio" type="text" name="municipio" required/>
+                <div class="row">
+                    <div id="btnsalvarid">
+                        <button class="waves-effect waves-light btn" type="submit" id="btnsalvar"> <i class="material-icons left">save</i>Salvar</button>
+                    </div>
+                </div>
 
-        <select class="browser-default" required>
-            <option value="AC">AC</option>
-            <option value="AL">AL</option>
-            <option value="AM">AM</option>
-            <option value="AP">AP</option>
-            <option value="BA">BA</option>
-            <option value="CE">CE</option>
-            <option value="DF">DF</option>
-            <option value="ES">ES</option>
-            <option value="GO">GO</option>
-            <option value="MA">MA</option>
-            <option value="MG">MG</option>
-            <option value="MS">MS</option>
-            <option value="MT">MT</option>
-            <option value="PA">PA</option>
-            <option value="PB">PB</option>
-            <option value="PE">PE</option>
-            <option value="PI">PI</option>
-            <option value="PR">PR</option>
-            <option value="RJ">RJ</option>
-            <option value="RN">RN</option>
-            <option value="RS" selected>RS</option>
-            <option value="RO">RO</option>
-            <option value="RR">RR</option>
-            <option value="SC">SC</option>
-            <option value="SE">SE</option>
-            <option value="SP">SP</option>
-            <option value="TO">TO</option>
-        </select>
-    </div>
+            </form>
 
-    <br>
+        </div>
 
-    <div class="bsalvar">
-        <button type="submit">Salvar</button>
-    </div>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"> </script>
+        <script type="text/javascript" src="js/initialization.js"> </script>
+        <script type="text/javascript" src="js/materialize.min.js"> </script>
+    </body>
 
-    </form>
+</html>
