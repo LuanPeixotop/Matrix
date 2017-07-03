@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário</title>
+</head>
+
+<body>
+
+    <h1>Ficha de Inscrição</h1> <br>
+    <form action="#" method="post" />
+    <div>
+        <label for="email">Endereço de e-mail:  </label>
+        <input id="email" type="email" name="email" required/>
+    </div>
+
+    <div>
+        <label for="nomeficha">Nome:  </label>
+        <input id="nomeficha" type="text" name="nomeficha" required>
+    </div>
+
+    <div>
+        <label>Sexo:  </label>
+        <select class="browser-default" required>
+    <option value="" disabled selected></option>
+    <option value="m">Masculino</option>
+    <option value="f">Feminino</option>
+  </select>
+    </div>
+
+    <div>
+        <label>Curso:  </label>
+        <select class="browser-default" required>
+            <option value="" disabled selected></option>
+            <option value="informatica">Curso Técnico em Informática</option>
+            <option value="alimentos">Curso Técnico em Alimentos</option>
+            <option value="agropecuaria">Curso Técnico em Agropecuária.</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="endereco">Endereço para correspondência:  </label>
+        <input id="endereco" type="text" name="endereco" required/>
+    </div>
+
+    <div>
+        <label for="complemento">Complemento do Endereço:  </label>
+        <input id="complemento" type="text" name="complemento" />
+    </div>
+
+    <div>
+        <label for="cep">CEP:  </label>
+        <input id="cep" type="text" name="cep" required/>
+    </div>
+
+    <div>
+        <label for="municipio">Município:  </label>
+        <input id="municipio" type="text" name="municipio" required/>
+
+        <select class="browser-default" required>
+            <option value="AC">AC</option>
+            <option value="AL">AL</option>
+            <option value="AM">AM</option>
+            <option value="AP">AP</option>
+            <option value="BA">BA</option>
+            <option value="CE">CE</option>
+            <option value="DF">DF</option>
+            <option value="ES">ES</option>
+            <option value="GO">GO</option>
+            <option value="MA">MA</option>
+            <option value="MG">MG</option>
+            <option value="MS">MS</option>
+            <option value="MT">MT</option>
+            <option value="PA">PA</option>
+            <option value="PB">PB</option>
+            <option value="PE">PE</option>
+            <option value="PI">PI</option>
+            <option value="PR">PR</option>
+            <option value="RJ">RJ</option>
+            <option value="RN">RN</option>
+            <option value="RS" selected>RS</option>
+            <option value="RO">RO</option>
+            <option value="RR">RR</option>
+            <option value="SC">SC</option>
+            <option value="SE">SE</option>
+            <option value="SP">SP</option>
+            <option value="TO">TO</option>
+        </select>
+    </div>
+
+    <br>
+
+    <div class="bsalvar">
+        <button type="submit">Salvar</button>
+    </div>
+
+    </form>

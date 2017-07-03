@@ -1,0 +1,47 @@
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        form {
+            width: 50%;
+            margin-left: 25%;
+        }
+        
+        h1 {
+            margin-left: 10%;
+            font-size: 23px;
+        }
+        
+        label {
+            display: inline-block;  
+            clear: left;
+            width: 250px;
+            text-align: right;
+            font-size: 17px;
+        }
+		
+		.ind2 {
+			font-size: 17px;
+		}
+        
+        .nradio {
+            float: right;
+        }
+        
+        .rradio {
+            float: right;
+        }
+        
+        .cradio {
+            float: right;
+            margin-right: 130px;
+        }
+
+        .bsalvar {
+            margin-left: 40%;
+        }
+
+        .benviar {
+            margin-left: 40%;
+        }
