@@ -11,7 +11,7 @@
         <title>Formulário</title>
     </head>
     
-    <body>
+    <body onload="formGetStorage()">
          <nav class="top-nav">
             <div class="nav-wrapper">
                 <a id="titulo-pag" href="#" class="brand-logo">Ficha de cadastro</a>
@@ -25,7 +25,7 @@
 
 
         <div class="container">
-            <form name="formulario" id="formulario" method="post">
+            <form onsubmit="formFunc()" name="formulario" id="formulario" method="post">
 
                 <div class="row">
                     <div class="input-field col s12">
@@ -47,7 +47,7 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">supervisor_account</i>
-                            <select required> 
+                            <select id="sexo" required> 
                                 <option value="" disabled selected></option>
                                 <option value="masculino">Masculino</option>
                                 <option value="feminino">Feminino</option>
@@ -59,7 +59,7 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">view_list</i>
-                            <select required>
+                            <select id="curso" required>
                                 <option value="" disabled selected></option>
                                 <option value="informatica">Curso técnico em informática</option>
                                 <option value="alimentos">Curso técnico em alimentos</option>
@@ -89,7 +89,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">navigation</i>
-                        <input id="cep" type="text" class="validate" required>
+                        <input id="cep" type="text" placeholder="xxxxx-xxx" pattern= "\d{5}-?\d{3}" class="validate" required>
                         <label for="cep">Cep:</label>
                     </div>
                 </div>
@@ -147,6 +147,7 @@
         <script type="text/javascript" src="js/jquery-3.2.1.min.js"> </script>
         <script type="text/javascript" src="js/initialization.js"> </script>
         <script type="text/javascript" src="js/materialize.min.js"> </script>
+        <script type="text/javascript" src="js/form.js"> </script>
     </body>
 
 </html>
