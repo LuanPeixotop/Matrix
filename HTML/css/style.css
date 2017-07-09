@@ -12,7 +12,20 @@
     font-size: 27px;
 }
 
-#btnsalvarid {
-    margin-left: 42%;
+#btnvertodos {
     margin-bottom: 50px;
+}
+
+#btnsalvarid {
+    margin-left: 27%;   
+    margin-bottom: 50px;
+}
+
+#tabelaCadastros th {
+    background-color:  #FF5050;
+    border: 1px solid black;
+}
+
+#tabelaCadastros td {
+    border: 1px solid black;
 }
