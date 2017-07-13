@@ -7,6 +7,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
         <link type="text/css" rel="stylesheet" href="css/style.css"/>
+        <script type="text/javascript" src="js/vue.js"> </script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Formulário</title>
     </head>
@@ -25,12 +26,12 @@
 
 
         <div class="container">
-            <form onsubmit="formFunc()" name="formulario" id="formulario" method="post">
+            <form @submit="salvarLocal" name="formulario" id="formulario" method="post">
 
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">email</i>
-                        <input id="email" type="email" class="validate" autofocus required>
+                        <input v-model="formObj.vEmail" id="email" type="email" class="validate" autofocus required>
                         <label for="email">E-mail:</label>
                     </div>
                 </div>
@@ -38,7 +39,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">assignment_ind</i>
-                        <input id="nome" type="text" class="validate" required>
+                        <input v-model="formObj.vNome" id="nome" type="text" class="validate" required>
                         <label for="nome">Nome:</label>
                     </div>
                 </div>
@@ -47,10 +48,11 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">supervisor_account</i>
-                            <select id="sexo" required> 
+                            <select class="browser-default" v-model="formObj.vSexo" id="sexo" required>
                                 <option value="" disabled selected></option>
-                                <option value="masculino">Masculino</option>
-                                <option value="feminino">Feminino</option>
+                                <option v-for="sexo in vSexoOp" v-bind:value="sexo.value">
+                                    {{ sexo.texto }}
+                                </option>
                             </select>
                             <label>Sexo:</label>
                         </div>
@@ -59,11 +61,11 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">view_list</i>
-                            <select id="curso" required>
+                            <select class="browser-default" v-model="formObj.vCurso" id="curso" required>
                                 <option value="" disabled selected></option>
-                                <option value="informatica">Curso técnico em informática</option>
-                                <option value="alimentos">Curso técnico em alimentos</option>
-                                <option value="agropecuaria">Curso técnico em agropecuária</option>
+                                <option v-for="curso in vCursoOp" v-bind:value="curso.value">
+                                    {{curso.texto}}
+                                </option>
                             </select>
                             <label>Curso:</label>
                         </div>
@@ -73,7 +75,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">location_on</i>
-                        <input id="endereco" type="text" class="validate" required>
+                        <input v-model="formObj.vEndereco" id="endereco" type="text" class="validate" required>
                         <label for="endereco">Endereço para correspondência:</label>
                     </div>
                 </div>
@@ -81,7 +83,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">my_location</i>
-                        <input id="complemento" type="text" class="validate">
+                        <input v-model="formObj.vComplemento" id="complemento" type="text" class="validate">
                         <label for="complemento">Complemento do endereço:</label>
                     </div>
                 </div>
@@ -89,7 +91,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">navigation</i>
-                        <input id="cep" type="text" placeholder="xxxxx-xxx" pattern= "\d{5}-?\d{3}" class="validate" required>
+                        <input v-model="formObj.vCep" id="cep" type="text" placeholder="xxxxx-xxx" pattern= "\d{5}-?\d{3}" class="validate" required>
                         <label for="cep">Cep:</label>
                     </div>
                 </div>
@@ -97,64 +99,34 @@
                 <div class="row">
                     <div class="input-field col s11">
                         <i class="material-icons prefix">open_with</i>
-                        <input id="municipio" type="text" class="validate" required>
+                        <input v-model="formObj.vMunicipio" id="municipio" type="text" class="validate" required>
                         <label for="municipio">Município:</label>
                     </div>
 
                     <div class="input-field col s1">
-                    <select name="uf" id="uf" required>
-                            <option value="AC">AC</option>
-                            <option value="AL">AL</option>
-                            <option value="AM">AM</option>
-                            <option value="AP">AP</option>
-                            <option value="BA">BA</option>
-                            <option value="CE">CE</option>
-                            <option value="DF">DF</option>
-                            <option value="ES">ES</option>
-                            <option value="GO">GO</option>
-                            <option value="MA">MA</option>
-                            <option value="MG">MG</option>
-                            <option value="MS">MS</option>
-                            <option value="MT">MT</option>
-                            <option value="PA">PA</option>
-                            <option value="PB">PB</option>
-                            <option value="PE">PE</option>
-                            <option value="PI">PI</option>
-                            <option value="PR">PR</option>
-                            <option value="RJ">RJ</option>
-                            <option value="RN">RN</option>
-                            <option value="RS" selected>RS</option>
-                            <option value="RO">RO</option>
-                            <option value="RR">RR</option>
-                            <option value="SC">SC</option>
-                            <option value="SE">SE</option>
-                            <option value="SP">SP</option>
-                            <option value="TO">TO</option>
+                    <select class="browser-default" v-model="formObj.vUf" name="uf" id="uf" required>
+                        <option value="" disabled selected>UF</option>
+                        <option v-for="uf in vUfOp" v-bind:value="uf.value">
+                            {{uf.texto}}
+                        </option>
                     </select>
                     </div>
                 </div>
-                
+
                 <div class="row">
-                    <div class="input-field col s3" id="btnsalvarid">
+                    <div id="btnsalvarid">
                         <button class="waves-effect waves-light btn" type="submit" id="btnsalvar"> <i class="material-icons left">save</i>Salvar</button>
                     </div>
+                </div>
 
             </form>
 
-                    <form method="get" action="cadastros.html" id="formcadastros">
-                        <div>
-                            <div class="input-field col s4" id="btnvertodos">
-                                <button class="waves-effect waves-light btn" id="btnvertodos" onclick="cadastros.html"> <i class="material-icons left">recent_actors</i>Ver todos</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
         </div>
 
         <script type="text/javascript" src="js/jquery-3.2.1.min.js"> </script>
-        <script type="text/javascript" src="js/initialization.js"> </script>
         <script type="text/javascript" src="js/materialize.min.js"> </script>
-        <script type="text/javascript" src="js/form.js"> </script>
+        <script type="text/javascript" src="js/initialization.js"> </script>
+        <script type="text/javascript" src="js/funcoesVue.js"> </script>
     </body>
 
 </html>

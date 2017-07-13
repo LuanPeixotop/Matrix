@@ -12,20 +12,19 @@
     font-size: 27px;
 }
 
-#btnvertodos {
-    margin-bottom: 50px;
-}
-
 #btnsalvarid {
-    margin-left: 27%;   
+    margin-left: 42%;
     margin-bottom: 50px;
 }
 
-#tabelaCadastros th {
-    background-color:  #FF5050;
-    border: 1px solid black;
+#sexo {
+    margin-top: 2px;
+    text-indent: 85px;
+    font-size: 16px;
 }
 
-#tabelaCadastros td {
-    border: 1px solid black;
+#curso {
+    margin-top: 2px;
+    text-indent: 89px;
+    font-size: 16px;
 }
