@@ -1,4 +1,4 @@
-new Vue ({
+var formCadastros = new Vue ({
         el: "#formulario",
         data: function () {
             return {
@@ -56,16 +56,10 @@ new Vue ({
         },
         
         methods: {
-            salvarLocal: function (e) {
-                e.preventDefault(true);
-                localStorage.setItem("inscrito", JSON.stringify(this.formObj));
+            salvarLocal: function () {
+                localStorage.setItem("inscrito " + localStorage.length, JSON.stringify(this.formObj));
                 alert("Inscrito Salvo com sucesso!");
                 this.formObj = "";
             }
         },
-        created: function (){
-       		var inscritoInit = localStorage.getItem("inscrito");
-        	if(inscritoInit)
-          	this.formObj = JSON.parse(inscritoInit);
-       }
 });

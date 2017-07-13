@@ -54,7 +54,7 @@
                                     {{ sexo.texto }}
                                 </option>
                             </select>
-                            <label>Sexo:</label>
+                            <label for="sexo">Sexo:</label>
                         </div>
                     </div>
 
@@ -67,7 +67,7 @@
                                     {{curso.texto}}
                                 </option>
                             </select>
-                            <label>Curso:</label>
+                            <label for="curso">Curso:</label>
                         </div>
                     </div>
                 </div>
@@ -114,9 +114,19 @@
                 </div>
 
                 <div class="row">
-                    <div id="btnsalvarid">
+                    <div class="input-field col s3" id="btnsalvarid">
                         <button class="waves-effect waves-light btn" type="submit" id="btnsalvar"> <i class="material-icons left">save</i>Salvar</button>
                     </div>
+
+            </form>
+
+                    <form method="get" action="cadastros.html" id="formcadastros">
+                        <div>
+                            <div class="input-field col s4" id="btnvertodos">
+                                <button class="waves-effect waves-light btn" id="btnvertodos" onclick="cadastros.html"> <i class="material-icons left">recent_actors</i>Ver todos</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
 
             </form>
@@ -126,7 +136,7 @@
         <script type="text/javascript" src="js/jquery-3.2.1.min.js"> </script>
         <script type="text/javascript" src="js/materialize.min.js"> </script>
         <script type="text/javascript" src="js/initialization.js"> </script>
-        <script type="text/javascript" src="js/funcoesVue.js"> </script>
+        <script type="text/javascript" src="js/form-cadastros-vue.js"> </script>
     </body>
 
 </html>
