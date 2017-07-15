@@ -41,3 +41,8 @@
 #tabelaCadastros td {
     border: 1px solid black;
 }
+
+#btnFormCadastros {
+    margin-left: 43%;
+    margin-top: 50px;
+}

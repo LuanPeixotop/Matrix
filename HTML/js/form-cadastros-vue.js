@@ -40,7 +40,8 @@ var formCadastros = new Vue ({
                     {texto:"SP", value:"SP"},
                     {texto:"SE", value:"SE"},
                     {texto:"TO", value:"TO"}
-				],
+                ],
+
                 formObj : {
                     vEmail: "",
                     vNome: "",
@@ -51,15 +52,31 @@ var formCadastros = new Vue ({
                     vCep: "",
                     vMunicipio: "",
                     vUf: ""
-                }
+                },
+
+                inscritos: [],
             }
         },
         
         methods: {
-            salvarLocal: function () {
-                localStorage.setItem("inscrito " + localStorage.length, JSON.stringify(this.formObj));
+            salvarLocal: function (e) {
+                inscObj = {
+                    email: this.formObj.vEmail,
+                    nome: this.formObj.vNome,
+                    sexo: this.formObj.vSexo,
+                    curso: this.formObj.vCurso,
+                    endereco: this.formObj.vEndereco,
+                    complemento: this.formObj.vComplemento,
+                    cep: this.formObj.vCep,
+                    municipio: this.formObj.vMunicipio,
+                    uf: this.formObj.vUf
+                };
+                if(localStorage.getItem("inscritos")) {
+                    this.inscritos = JSON.parse(localStorage.getItem("inscritos"));
+                }
+                this.inscritos.push(inscObj);
+                localStorage.setItem("inscritos", JSON.stringify(this.inscritos));
                 alert("Inscrito Salvo com sucesso!");
-                this.formObj = "";
             }
         },
 });
