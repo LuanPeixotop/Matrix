@@ -127,7 +127,7 @@
 #gravarfirebase {
   margin-top: -5px;
   margin-bottom: 50px;
-  margin-right: -60px;
+  margin-right: -50px;
 }
 
 #btnsalvarid {
@@ -350,7 +350,7 @@
           }
         },
         returnInscritos: function () {
-          return "teste";
+          return inscritosRef.once('value');
         }
       }
     }
