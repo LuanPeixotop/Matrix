@@ -1,0 +1,10 @@
+{
+ "name": "formulario-matrix",
+ "version": "1.0.0",
+ "description": "formulario-matrix",
+ "author": "Luan Peixoto Pereira",
+ "private": true,
+ "scripts": {
+   "postinstall": "npm install express"
+ }
+}
